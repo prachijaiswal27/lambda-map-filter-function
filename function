@@ -1,0 +1,19 @@
+# filter and tranforming employees data using lambda function 
+employees = [
+    {'name': 'Alice', 'age': 30, 'salary': 70000},
+    {'name': 'Bob', 'age': 22, 'salary': 40000},
+    {'name': 'Charlie', 'age': 25, 'salary': 50000},
+    {'name': 'David', 'age': 35, 'salary': 90000},
+    {'name': 'Eve', 'age': 28, 'salary': 45000}
+]
+#Use filter() and a lambda to select employees older than 25
+older_employee=list(filter(lambda a:a['age']>25,employees))
+print(older_employee)
+
+#Use map() and a lambda to give each selected employee a 10% salary raise
+raise_salary=list(map(lambda a:a['salary']*1.10,employees))
+print(raise_salary)
+
+#Sort the updated employees by their new salary, in descending order
+new_salary=sorted(employees,key=lambda a:a['salary'],reverse=True)
+print(new_salary)
